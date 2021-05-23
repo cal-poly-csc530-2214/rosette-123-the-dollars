@@ -2,6 +2,7 @@
 
 ## [Team members](users.txt)
 Jevans27@calpoly.edu  Justin Evans
+
 slin35@calpoly.edu  Sherry Lin
 
 ## Deliverables
