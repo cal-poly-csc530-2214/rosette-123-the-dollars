@@ -1,7 +1,8 @@
 # rosette-123-the-dollars
 
 ## [Team members](users.txt)
-gJevans27@calpoly.edu  Justin Evans
+Jevans27@calpoly.edu  Justin Evans
+
 slin35@calpoly.edu  Sherry Lin
 
 ## Deliverables
