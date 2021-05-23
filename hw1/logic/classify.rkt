@@ -6,8 +6,13 @@
 ; * 'TAUTOLOGY if every interpretation I satisfies F;
 ; * 'CONTRADICTION if no interpretation I satisfies F;
 ; * 'CONTINGENCY if there are two interpretations I and I′ such that I satisfies F and I' does not.
+; if false, if true contignent else contradiction else always true
 (define (classify F)
-  (error 'classify "not implemented yet!"))
+  (if (sat? (solve (assert (! F))))
+      (if (sat? (solve (assert F)))
+          "CONTINGENCY"
+          "CONTRADICTION"
+          ) "TAUTOLOGY"))
 
 (define-symbolic* p q r boolean?)
 
@@ -20,3 +25,6 @@
 ; (p ↔ q) ∧ (q → r) ∧ ¬(¬r → ¬p)
 (define f2 (&& (<=> p q) (=> q r) (! (=> (! r) (! q)))))
 
+(classify f0)
+(classify f1)
+(classify f2)
