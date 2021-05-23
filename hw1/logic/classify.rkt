@@ -1,4 +1,5 @@
 #lang rosette
+(require rackunit)
 
 (provide (all-defined-out))
 
@@ -25,6 +26,6 @@
 ; (p ↔ q) ∧ (q → r) ∧ ¬(¬r → ¬p)
 (define f2 (&& (<=> p q) (=> q r) (! (=> (! r) (! q)))))
 
-(classify f0)
-(classify f1)
-(classify f2)
+(check-equal? (classify f0) "CONTINGENCY")
+(check-equal? (classify f1) "TAUTOLOGY")
+(check-equal? (classify f2) "CONTRADICTION")
